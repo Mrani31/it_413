@@ -10,7 +10,7 @@
    }
    else
    {
-      echo("The length of first name must be between 3 to 10 characters and should not contain bad characters "); 
+      echo("First name required and length must be between 3 to 10 characters and should not contain bad characters "); 
       echo "<br>";
    }
    
@@ -23,19 +23,20 @@
    }
    else
    {
-      echo(" The length of last name must be between 2 to 15 characters and should not contain bad characters");
+      echo(" Last name required and length must be between 2 to 15 characters and should not contain bad characters");
       echo "<br>"; 
    }
-     
-
-   
+    
    
    $address_submitted = trim($_POST["address"]);
-   if(validateAddress($address_submitted ))
+   if(empty($address_submitted ))
    {
-      echo( $address_submitted );
-      echo "<br>";
-      
+      echo ("");
+   }
+   elseif(validateAddress($address_submitted))
+   {
+      echo($address_submitted);
+      echo "<br>"; 
    }
    else
    {
@@ -47,16 +48,18 @@
 
 
    $phone_number_submitted = trim($_POST["phonenumber"]);
-   if(validatePhoneNumber($phone_number_submitted))
+   if(preg_match('/^[0-9]{10,12}+$/', $phone_number_submitted))
    {
-      echo($phone_number_submitted);
-      echo "<br>";
-   }
+      echo ($phone_number_submitted);
+      echo "<br>"; 
+      
+   } 
    else
    {
-      echo("Phone number must be 10 or 12 digits. "); 
-      echo "<br>";
+     echo " Phone number required and must be between 10 or 12 digits.";
+     echo "<br>"; 
    }
+      
 
    $inquiry_submitted= trim($_POST["inquiry"]);
    if(validateInquiry($inquiry_submitted))
@@ -84,13 +87,13 @@
   
          
         <br>FirstName:<input type = "text" name = "firstname" value="<?php echo($first_name_submitted); ?>">   
-        <span><?php echo $first_name_submitted ?> </span>  
+      
       
         <br>LastName: <input type = "text" name = "lastname" value="<?php echo($last_name_submitted); ?>"> 
-        <span><?php echo $last_name_submitted ?> </span> 
+        
      
         <br>Address:  <input type = "text" name = "address" value="<?php echo($address_submitted); ?>"> 
-        <span><?php echo $address_submitted ?> </span> 
+ 
         <br>PhoneNumber:  <input type = "numbers" name = "phonenumber" value="<?php echo($phone_number_submitted); ?>"> <br>
         Inquiry:      <textarea input type = "text" name= "inquiry" rows="3" cols="40"value="<?php echo($inquiry_submitted); ?>"> </textarea><br>
         
