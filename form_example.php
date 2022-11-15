@@ -72,7 +72,6 @@
       echo("The inquiry required"); 
       echo "<br>";
    }
-
 ?>
 <!doctype html>
 <html lang="en">
