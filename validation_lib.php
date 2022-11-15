@@ -34,12 +34,7 @@ function validateLastName($passed_last_name)
 
 function validateAddress($passed_address) 
 {
-  if(strlen($passed_address) === 0)
-  {
-    return false;
-  }
- 
- elseif(strlen($passed_address) > 7 && strlen($passed_address) < 25 ) 
+ if(strlen($passed_address) > 7 && strlen($passed_address) < 25 ) 
    {
     return true;
    }
@@ -80,9 +75,6 @@ function validateInquiry($passed_inquiry)
 }
 
 
-
-
-
 function hasBadChars($passed_characters, $passed_value)
 {
     $bad_chars_found =false;
@@ -99,14 +91,5 @@ function hasBadChars($passed_characters, $passed_value)
     }
     return $bad_chars_found;
 }
-function validating($phone){
-  if(preg_match('/^[0-9]{10}+$/', $phone))
-   {
-  echo " Valid Phone Number";
-  } 
-  else
-   {
-  echo " Invalid Phone Number";
-  }
-  }
+
 ?>
