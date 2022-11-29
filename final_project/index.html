@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <!--Login State Start-->
+        <div id="login_state">
+            <form id="login_form">
+                <table id = "login_form_table">
+                    <tr>
+                        <td><Strong>Username:</strong></td>                
+                        <td><input type="text" name="login_username" id="login_username" value=""></td>
+                    </tr>
+                    <tr>
+                        <td><Strong>Password:</strong></td>                
+                        <td><input type="text" name="login_password" id="login_password" value=""></td>
+                    </tr>
+                </table>
+                <button id="login_button"> Login</button>
+            </form>
+            
+            <button id="login_fb"> Login with Facebook</button>
+
+        </div>
+           <!--Login State End-->
+           <!--Select Project State Start-->
+            <div id="select_project_state">
+              <form id="project_select">
+                <select name="project_selector" id="project_selector">
+                    <option value="somevalue"> Some Text</option>
+                </select>
+              </form>
+            </div>
+            <div id="display_task_state">
+                <form id="task_select">
+                  <select name="task_selector" id="task_selector">
+                      <option value="somevalue"> Some Text</option>
+                  </select>
+                </form>
+              </div>
+               <!-- <form id="select_project_form">
+                    <table id = "select_project_table">
+                        <tr>
+                            <td><Strong>Project Number:</strong></td>                
+                            <td><input type="text" name="project_num" id="project_num" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><Strong>Project Name:</strong></td>                
+                            <td><input type="text" name="project_name" id="project_name" value=""></td>
+                        </tr>
+                    </table>
+                    <button id ="submit_button"> Submit</button>
+                </form>
+            </div>-->
+            <!--Select Project State End-->
+            <!--Select Project info State Start-->
+            <div id="display_project_info_state">
+                <p> This is the display project information</p>
+               
+                    <form id="display_project_info">
+                        <table id = "display_project_info_table">
+                            <tr>
+                                <td><Strong>Project Number:</strong></td>                
+                                <td><input type="text" name="project_num" id="project_num" value=""></td>
+                            </tr>
+                          
+                            <tr>
+                                <td><Strong>Task Number:</strong></td>                
+                                <td><input type="text" name="task_num" id="task_num" value=""></td>
+                            </tr>
+                            <tr>
+                                <td><Strong>Description:</strong></td>                
+                                <td><input type="text" name="description" id="description" value=""></td>
+                            </tr>
+                            <tr>
+                                <td><Strong>Status:</strong></td>                
+                                <td><input type="text" name="status" id="status" value=""></td>
+                            </tr>
+                            
+                        </table>
+                        <input type ="submit" value=" Submit">
+                    </form>
+                </div>
+
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="jqueryui/jquery-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="jqueryui/jquery-ui.structure.min.css">
+        <link rel="stylesheet" type="text/css" href="jqueryui/jquery-ui.theme.min.css">
+        <script src="jqueryui/jquery-ui.min.js"></script>
+        <script src="js/application.js"></script>
+    </body>
+
+
+</html>
