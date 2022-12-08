@@ -31,48 +31,50 @@
            <!--Login State End-->
            <!--Select Project State Start-->
             <div id="select_project_state">
-              <form id="project_select">
+              <form id="project_select" action="get_tasks" method="POST">
                 <select name="project_selector" id="project_selector">
                     <option value="somevalue"> Some Text</option>
                 </select>
               </form>
             </div>
+            <!--project state end-->
+            <!--display task state start-->
             <div id="display_task_state">
-                <form id="task_select">
+                <form id="task_select" action="" method="POST">
                   <select name="task_selector" id="task_selector">
                       <option value="somevalue"> Some Text</option>
                   </select>
                 </form>
               </div>
-               <!-- <form id="select_project_form">
-                    <table id = "select_project_table">
+              <!--display task state ends-->
+              <div id="add_modify_task_state">
+                <form id="modify_form">
+                    <table id = "modify_form_table">
                         <tr>
-                            <td><Strong>Project Number:</strong></td>                
-                            <td><input type="text" name="project_num" id="project_num" value=""></td>
-                        </tr>
-                        <tr>
-                            <td><Strong>Project Name:</strong></td>                
-                            <td><input type="text" name="project_name" id="project_name" value=""></td>
+                            <td><button id="modify_button"> Modify Task </button></td>
+                            <td><button id="add_button"> Add Task </button></td>
+                                
                         </tr>
                     </table>
-                    <button id ="submit_button"> Submit</button>
-                </form>
-            </div>-->
-            <!--Select Project State End-->
-            <!--Select Project info State Start-->
+                </form>           
+            </div>
+            
+              
+               
             <div id="display_project_info_state">
-                <p> This is the display project information</p>
+                <p id="addInfo"> This is to add the project information</p>
+                <p id="modifyInfo"> This is to modify the project information</p>
                
                     <form id="display_project_info">
                         <table id = "display_project_info_table">
                             <tr>
-                                <td><Strong>Project Number:</strong></td>                
-                                <td><input type="text" name="project_num" id="project_num" value=""></td>
+                                <td><Strong>Project Name:</strong></td>                
+                                <td><input type="text" name="project_name" id="project_num" value=""></td>
                             </tr>
                           
                             <tr>
-                                <td><Strong>Task Number:</strong></td>                
-                                <td><input type="text" name="task_num" id="task_num" value=""></td>
+                                <td><Strong>Task Name:</strong></td>                
+                                <td><input type="text" name="task_name" id="task_num" value=""></td>
                             </tr>
                             <tr>
                                 <td><Strong>Description:</strong></td>                
