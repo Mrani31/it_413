@@ -25,7 +25,7 @@ $(document).ready(function(){
     $("#modify_button").click(function(){
        
        modifyTasks();
-       myFunction();
+       myFunction1();
         return false;  
 
     });
@@ -52,9 +52,9 @@ $(document).ready(function(){
 function myFunction() {
     document.getElementById("select_project_state").style.transition = "all 2s";}
 function myFunction1() {
-   document.getElementById("display_project_info").style.transition = "all 4s";}
+   document.getElementById("modify_button").style.transition = "all 4s";}
 function over(){
-   document.getElementById("midify_button").innerHTML="Edit Project Tasks"; }
+   document.getElementById("modify_button").innerHTML="Edit Project Tasks"; }
 
 //End transitions 
 //End document ready functionality

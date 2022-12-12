@@ -2,6 +2,7 @@
 
 //include database access class
 include("db_mysql.php");
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 //declare the database instance
 $db = new DB_Sql;
@@ -30,7 +31,7 @@ if($function=="get_projects")
 			array_push($project_list, array("project_number" => $project_num, "project_full_name" => $project_name));
 				
 		}//end while, all available projects are pushed onto the project_list array	
-
+		$db -> close();
 		//return the data in JSON format
 		echo json_encode(array("status" => "Success", "list_of_projects" => $project_list));
 		
@@ -68,6 +69,8 @@ if($function=="get_tasks")
     				
     	}//end while, all available tasks for the specified project are pushed onto the task_list array	
 
+		$db -> close();
+
 		//return the data in JSON format
 		echo json_encode(array("status" => "Success", "list_of_tasks" => $task_list));
        
@@ -83,12 +86,18 @@ if($function=="validate_user")
 
 		//the query to get the list of tasks for the project
 		$query="SELECT COUNT(*) USERCNT FROM Creds where username='$username' and password='$passwd'";
+
+		$stmt = $db->prepare($query);
+		//$stmt->bind_param("i",$id);
+		$stmt->$execute();
+		$result = $stmt->get_result();
+		$user = $result->fetch_assoc();
 		error_log($query);
 
 		//do the query
-		$db->query($query);
+		//$db->query($query);
 
-		while($db->next_record())
+		while($result->next_record())
 		{
 			//store the database columns as variables
 			$count_rec=$db->f("USERCNT");
@@ -98,6 +107,8 @@ if($function=="validate_user")
 			//array_push($user_list, array("usr_cnt" => $count_rec));
     				
     	}//end while, all available tasks for the specified project are pushed onto the task_list array	
+
+				$db -> close();
 
 		//return the data in JSON format
 		echo json_encode($count_rec,JSON_NUMERIC_CHECK);
