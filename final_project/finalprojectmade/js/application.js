@@ -25,6 +25,7 @@ $(document).ready(function(){
     $("#modify_button").click(function(){
        
        modifyTasks();
+       myFunction();
         return false;  
 
     });
@@ -50,8 +51,8 @@ $(document).ready(function(){
 //transition functions 
 function myFunction() {
     document.getElementById("select_project_state").style.transition = "all 2s";}
-function myFunction() {
-   document.getElementById("display_task_info_state").style.transition = "all 4s";}
+function myFunction1() {
+   document.getElementById("display_project_info").style.transition = "all 4s";}
 function over(){
    document.getElementById("midify_button").innerHTML="Edit Project Tasks"; }
 
@@ -61,6 +62,7 @@ function over(){
 function validateUser()
 {
    var form_username = $("#login_username").val();
+   var form_passwd = $("#login_password").val();
    if (form_username == "a")
    {
     $( "#login_form").hide();
