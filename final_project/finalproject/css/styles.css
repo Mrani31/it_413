@@ -4,7 +4,7 @@ body {
   }
   
   h1 {
-    color: white;
+    color: rgb(231, 93, 93);
     text-align: center;
   }
   
@@ -12,6 +12,7 @@ body {
     font-family: verdana;
     font-size: 20px;
   }
+  /*hide */
 #login_state
 {
     display:none;
@@ -32,4 +33,11 @@ body {
 #add_modify_task_state
 {
     display: none;
+}
+/* Buttons */
+button {
+  padding: 5px 10px;
+  border: none;
+  background: rgb(77, 29, 198);
+  cursor: pointer;
 }

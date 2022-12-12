@@ -40,13 +40,16 @@ if($function=="get_projects")
 if($function=="get_tasks")
 {		
 		//get the variables we need to run the query
-		$project_num=$_POST['project_number'];
+		// echo("entered function");
+		
+		$project_num=$_POST[ 'project_selector' ];
+		echo(project_num);														
 
 		//array containing the list of projects
 		$task_list = array();
 
 		//the query to get the list of tasks for the project
-		$query="SELECT * FROM Tasks WHERE Project_Num=$project_num";
+		$query="SELECT * FROM tasks WHERE project_num= 3";
 
 		//do the query
 		$db->query($query);

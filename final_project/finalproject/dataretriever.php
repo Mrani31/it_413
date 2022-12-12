@@ -6,15 +6,13 @@ include("db_mysql.php");
 //declare the database instance
 $db = new DB_Sql;
 
-$project_list = array();
-
 $function=$_POST['command'];
 
 //if we need to get the list of available projects, return the appropriate XML data
 if($function=="get_projects")
 	{
 		//array containing the list of projects
-		//$project_list = array();
+		$project_list = array();
 
 		//the query to get the list of available projects
 		$query="SELECT * FROM Projects";
@@ -43,19 +41,13 @@ if($function=="get_tasks")
 {		
 		//get the variables we need to run the query
 		$project_num=$_POST['project_number'];
-		// error_log($s_project_name);
-		// echo($project_name);
 
-    	foreach ($_POST as $key => $value)		
-        	error_log ($key);
-		
-		// echo ("$_POST{")
 		//array containing the list of projects
 		$task_list = array();
 
 		//the query to get the list of tasks for the project
-		$query="SELECT * FROM tasks WHERE project_num= $project_num and (Status= 'Unassigned' or Status = 'In Process')";
-		// echo($query);
+		$query="SELECT * FROM Tasks WHERE Project_Num=$project_num";
+
 		//do the query
 		$db->query($query);
 

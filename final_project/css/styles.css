@@ -1,13 +1,49 @@
+
+body {
+  background-color: rgb(65, 196, 213);
+}
+
+h1 {
+  color: rgb(97, 18, 18);
+  text-align: center;
+}
+p
+{
+  font-family: 'Times New Roman', Times, serif;
+  color:rgb(230, 242, 235);
+}
+
+/*
 #login_state
 {
-    /*display:none;*/
+  display:none;
+}*/
+#add_modify_task_state
+{
+  display: none;
 }
 
 #select_project_state
 {
+display:none;
+}
+#display_task_state
+{
  display:none;
 }
-#display_project_info_state
+#add_modify_task_state
 {
-   display:none;
+  display: none;
+}
+/* Buttons */
+button {
+padding: 5px 10px;
+border: none;
+background: rgb(66, 66, 238);
+cursor: pointer;
+
+
+}
+div {
+  background-color: lightblue;
 }
