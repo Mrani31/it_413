@@ -31,7 +31,7 @@ if($function=="get_projects")
 			array_push($project_list, array("project_number" => $project_num, "project_full_name" => $project_name));
 				
 		}//end while, all available projects are pushed onto the project_list array	
-		$db -> close();
+		//$db -> close();
 		//return the data in JSON format
 		echo json_encode(array("status" => "Success", "list_of_projects" => $project_list));
 		
@@ -49,7 +49,7 @@ if($function=="get_tasks")
 		$task_list = array();
 		//$query="SELECT * FROM tasks WHERE project_num= $project_num and Status in( 'Unassigned','In Process')";
 		//the query to get the list of tasks for the project
-		$query="SELECT * FROM Tasks where project_num=(select project_num from projects where project_name='$project_name') and Status in( 'Unassigned','In Process')";
+		$query="SELECT * FROM Tasks where project_num=(select project_num from projects where project_name='$project_name') and Status in( 'Unassigned','In Process') order by Status";
 	
 		error_log($query);
 
@@ -69,7 +69,7 @@ if($function=="get_tasks")
     				
     	}//end while, all available tasks for the specified project are pushed onto the task_list array	
 
-		$db -> close();
+		//$db -> close();
 
 		//return the data in JSON format
 		echo json_encode(array("status" => "Success", "list_of_tasks" => $task_list));
@@ -87,17 +87,16 @@ if($function=="validate_user")
 		//the query to get the list of tasks for the project
 		$query="SELECT COUNT(*) USERCNT FROM Creds where username='$username' and password='$passwd'";
 
-		$stmt = $db->prepare($query);
-		//$stmt->bind_param("i",$id);
-		$stmt->$execute();
-		$result = $stmt->get_result();
-		$user = $result->fetch_assoc();
+		//$stmt = $db->prepare($query);
+		//$stmt->$execute();
+		//$result = $stmt->get_result();
+		//$user = $result->fetch_assoc();
 		error_log($query);
 
 		//do the query
-		//$db->query($query);
+		$db->query($query);
 
-		while($result->next_record())
+		while($db->next_record())
 		{
 			//store the database columns as variables
 			$count_rec=$db->f("USERCNT");
@@ -108,7 +107,7 @@ if($function=="validate_user")
     				
     	}//end while, all available tasks for the specified project are pushed onto the task_list array	
 
-				$db -> close();
+				//$db -> close();
 
 		//return the data in JSON format
 		echo json_encode($count_rec,JSON_NUMERIC_CHECK);

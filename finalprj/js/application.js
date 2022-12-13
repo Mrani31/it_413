@@ -34,17 +34,13 @@ $(document).ready(function(){
         return false;   
     });
     
-    $("#project_button").click(function(){
-        getTasks();
-        return false;   
-    });
     
-    $("p").mouseover(function(){
-        $("p").css("background-color", "yellow");
-      });
-      $("p").mouseout(function(){
-        $("p").css("background-color", "lightgray");
-      });
+    // $("p").mouseover(function(){
+    //     $("p").css("background-color", "yellow");
+    //   });
+    //   $("p").mouseout(function(){
+    //     $("p").css("background-color", "lightgray");
+    //   });
       
 });
 //transition functions 
@@ -73,6 +69,7 @@ function validateUser()
             $("#display_task_info_state").show();
             $("#add_modify_task_state").show();
             $("#display_project_info_state").hide();
+
             getProjects();
            }
            else
@@ -103,6 +100,8 @@ function validateUser()
 //Begin getProject function
 function getProjects()
 {
+    $("home").removeClass('active');
+    $("prjs").addClass('active');
    var retriever_command = "get_projects";
    $.post('dataretriever.php', {command: retriever_command}, function(data){
     
@@ -221,8 +220,6 @@ function project_select_status_change()
     
 }
 function modifyTasks()
-
-
 { 
     
     $( "#login_form").hide();
@@ -248,5 +245,13 @@ function addTasks()
     $("#modifyInfo").hide();
 }
 
+function setActiveLink(setActive){
+    var links = document.querySelectorAll("#menuLinks a");
+    Array.prototype.map.call(links, function(e) {
+        e.className = "";
+        if (e.id == setActive)
+            e.className = "active";
+    })
+}
 
 //function getProjects()

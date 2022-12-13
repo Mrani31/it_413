@@ -22,8 +22,14 @@
    padding-bottom: 20px;
    padding-left: 30px;
    padding-right: 40px;
-   background-color: rgb(149, 246, 246);
+   
  }
+
+ #th{
+  background-color: rgb(149, 246, 246);
+
+ }
+
  #select_project_state:hover {
   background-color: coral;
   width: 400px;
